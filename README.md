@@ -3,6 +3,22 @@ pubimg
 
 pubimg.sh
 
+Requirements
+------------
+
+* You need ImageMagick to run this script. On ubuntu systems you simply can install the package `imagemagick`.
+* You need ExifTool to run this script. On ubuntu systems you simply can install the package `libimage-exiftool-perl`.
+* You need other programs, that are standard, though: `bc`, `awk`.
+
+Running the script
+------------------
+
+To run the script on all files with the extension `.jpg` in the current directory (same directory in which the script itself was saved), type:
+
+  ./pubimg.sh *.jpg
+
+The script won't change the original files. It will create a folder (see variable `TARGET_DIR`) and create the converted file copies there.
+
 Customizing
 -----------
 
