@@ -1,7 +1,7 @@
 pubimg
 ======
 
-pubimg.sh
+pubimg.sh - A little helper script that make jpeg-photos ready for (my) webpublishing uses: it resizes the images, inserts a watermark and removes exif data. It is not very flexible but it can be changed to other needs easily.
 
 Requirements
 ------------
