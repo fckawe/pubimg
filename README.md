@@ -15,7 +15,7 @@ Running the script
 
 To run the script on all files with the extension `.jpg` in the current directory (same directory in which the script itself was saved), type:
 
-  ./pubimg.sh *.jpg
+    ./pubimg.sh *.jpg
 
 The script won't change the original files. It will create a folder (see variable `TARGET_DIR`) and create the converted file copies there.
 
