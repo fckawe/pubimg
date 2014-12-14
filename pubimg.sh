@@ -72,6 +72,13 @@ insert_watermark() {
 	if [ -f "$WATERMARK" ]; then
 		percent_size=$(echo "$WATERMARK_SIZE * 100 / $aspect_ratio" | bc -l)
 		percent_size=$(echo "$percent_size + 6*(($WATERMARK_SIZE - $percent_size)*.1)" | bc -l)
+		imgw=$(identify -format %[fx:w] "$1")
+		imgh=$(identify -format %[fx:h] "$1")
+		if [ $imgh -gt $imgw ]; then
+			size=$(identify -format %[fx:h*$percent_size/100] "$1")
+		else
+			size=$(identify -format %[fx:w*$percent_size/100] "$1")
+		fi
 		size=$(identify -format %[fx:w*$percent_size/100] "$1")
 		composite -blend "$WATERMARK_OPACITY" -bordercolor transparent -border "$WATERMARK_MARGIN" -gravity "$WATERMARK_POS" -background none \( "$WATERMARK" -geometry "$size" \) "$1" "$1"
 	else
